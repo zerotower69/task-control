@@ -47,16 +47,15 @@ jobs:
       # step 4. 安装依赖并打包
       - name: Install dependencies
         run: pnpm install
-      - name: Build
+      - name: Build 🔧
         run: pnpm demo:build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      # 部署 https://github.com/JamesIves/github-pages-deploy-action
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # Upload build repository
-          path: './examples/demo/task-control'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2    #使用插件 => https://github.com/actions/deploy-pages
+        branch: gh-develop  # default: gh-pages
+        folder: examples/demo/dist
+        clean: true # Automatically remove deleted files from the deploy branch
+        # commit-message: ${{ github.event.head_commit.message }} # default: `Deploying to gh-pages from @ 3238feb 🚀`
+        # commit-message: "deploy: ${{ github.sha }} (${{ github.event.head_commit.message }}) 🚀 " #使用插件 => https://github.com/actions/deploy-pages

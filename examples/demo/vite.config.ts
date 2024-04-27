@@ -88,7 +88,7 @@ export default defineConfig(config => {
       minify: "esbuild",
       cssTarget: "chrome79",
       chunkSizeWarningLimit: 2000,
-      outDir: 'task-control',
+      outDir: 'dist',
     },
   };
 });
