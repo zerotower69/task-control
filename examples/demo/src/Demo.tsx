@@ -280,7 +280,7 @@ const Toolbar=forwardRef<ToolbarRef,ToolbarProps>(({onOperate},ref)=>{
                 }}>恢复</Button>
             </div>
             <div className={cs('toolbar-item', {
-                'hidden': isIn(TaskStatus.PENDING,TaskStatus.FINISHED,TaskStatus.DESTROYED)
+                'hidden': isIn(TaskStatus.READY,TaskStatus.PENDING,TaskStatus.FINISHED,TaskStatus.DESTROYED)
             })}>
                 <Button danger onClick={() => {
                     onOperate?.('pause')
@@ -388,12 +388,12 @@ const Demo: React.FC = () => {
             toolbarRef.current!.updateFirst(true)
         }}/>
         <Toolbar ref={toolbarRef} onOperate={(type)=>{
-            toolbarRef.current!.updateFirst(false)
             switch (type) {
                 case 'start':
                 case 'resume':
                     if(curStatus === TaskStatus.DESTROYED) $message.warning('任务队列已销毁')
                     resume()
+                    toolbarRef.current!.updateFirst(false)
                     break
                 case 'pause':
                     pause()
