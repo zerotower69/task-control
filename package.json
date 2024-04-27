@@ -1,0 +1,14 @@
+{
+  "name": "task-controll",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "hook": "workspace:*"
+  },
+  "scripts": {
+    "demo:build": "pnpm -C examples/demo build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

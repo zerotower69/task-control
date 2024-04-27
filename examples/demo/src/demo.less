@@ -1,0 +1,89 @@
+.demo-box{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toolbar-box{
+  position: absolute;
+  top:10px;
+  right: 10px;
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 6px;
+  color: white;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.add-task-form
+{
+  .ant-form-item-label label{
+    color: #1d1d1d;
+  }
+}
+
+.task-box{
+  padding: 20px 40px;
+  background-color: #1a1a1a;
+  color: white;
+  height: fit-content;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 700px;
+  .task-info{
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    .info{
+      display: flex;
+      align-items: center;
+    }
+    .message{
+      min-width: 350px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.task-list{
+  list-style: none;
+  .task-item{
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    margin-top: 10px;
+  }
+}
+
+.format-item{
+
+}
+.format {
+  &-ready{
+    color: gray;
+  }
+  &-executing{
+    color: deepskyblue;
+  }
+  &-finished{
+    color: greenyellow;
+  }
+  &-pending{
+     color: #ff6200;
+  }
+  &-destroyed {
+    color: red;
+  }
+}
+
+.hidden{
+  display: none;
+}
