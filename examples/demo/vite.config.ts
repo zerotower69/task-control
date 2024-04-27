@@ -1,6 +1,6 @@
 import {build, defineConfig, UserConfig} from "vite";
 import react from "@vitejs/plugin-react";
-import { resolve } from "node:path";
+import { resolve } from "path";
 import { loadEnv } from "vite";
 import legacy from "@vitejs/plugin-legacy";
 import pkg from "./package.json";
@@ -88,7 +88,7 @@ export default defineConfig(config => {
       minify: "esbuild",
       cssTarget: "chrome79",
       chunkSizeWarningLimit: 2000,
-      outDir: 'build',
+      outDir: 'task-control',
     },
   };
 });
